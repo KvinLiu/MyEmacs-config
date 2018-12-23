@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: hugo-post
+# key: opost
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: posts/
+
+#+HUGO_WEIGHT: auto
+#+HUGO_AUTOSET_LASTMOD: t
+
+#+TITLE: ${1:`(capitalize (replace-regexp-in-string "-\\|_" " " (file-name-base))))`}
+#+DATE: `(format-time-string "%Y-%m-%d %H:%M:%S UTC-04:00" (current-time))`
+
+#+HUGO_TAGS: $2
+#+HUGO_CATEGORIES:
+#+HUGO_DRAFT: true
+
+*
+$0
